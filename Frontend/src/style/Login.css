@@ -15,6 +15,21 @@
   color: #000000;
 }
 
+.password-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.forgot-link {
+  font-size: 0.85rem;
+  color: #0000ff;
+  text-decoration: underline;
+  margin-bottom: 1rem;
+  align-self: flex-end;
+}
+
 .login-div {
   display: flex;
   flex-direction: column;
@@ -55,7 +70,6 @@
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  transition: all 0.3s ease;
 }
 
 .googlebtn {
@@ -69,7 +83,6 @@
   border: 1px solid black;
   border-radius: 8px;
   cursor: pointer;
-  transition: all 0.3s ease;
 }
 
 .login-text {

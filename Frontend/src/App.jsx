@@ -4,6 +4,7 @@ import Error from "./components/Error";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import SignUp from "./pages/SignUp";
+import ForgotPassword from "./components/ForgotPassword";
 
 const App = () => {
   const router = createBrowserRouter([
@@ -27,6 +28,10 @@ const App = () => {
       path: "/signup",
       element: <SignUp />,
     },
+    {
+      path: "forgot-password",
+      element: <ForgotPassword />
+    }
   ])
   return(
     <RouterProvider router={router}></RouterProvider>
