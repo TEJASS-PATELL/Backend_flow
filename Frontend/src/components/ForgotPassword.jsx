@@ -3,12 +3,12 @@ import { Link } from "react-router-dom";
 import "../style/ForgotPassword.css";
 
 export default function ForgotPassword() {
-    const [otpStage, setotpStage] = useState(false);
+    const [otpStage, setotpStage] = useState(true);
     const [otp, setOtp] = useState("");
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        setotpStage(true);
+        setotpStage(false);
     }
 
     const handleOtpSubmit = (e) => {
@@ -30,16 +30,13 @@ export default function ForgotPassword() {
                         <p className="forgot-desc">
                             Enter your email below and we'll send you a link to reset your password.
                         </p>
-                        <div className="forgot-div">
-                            <label htmlFor="email">
-                                Email
+                        <div className="forgot-div">                           
                                 <input
                                     id="email"
                                     type="email"
                                     placeholder="Enter your email"
                                     required
-                                />
-                            </label>
+                                />                       
                             <button onClick={handleSubmit} type="submit" className="forgot-btn">
                                 Send Reset Link
                             </button>
