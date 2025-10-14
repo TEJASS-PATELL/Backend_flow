@@ -10,12 +10,16 @@ body {
   width: 100%;
   font-family: "Comic Relief", sans-serif;
   background-color: #ffffff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 input,
 button {
   font-family: inherit;
+}
+
+.main-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; 
 }

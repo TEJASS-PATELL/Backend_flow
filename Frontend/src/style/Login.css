@@ -1,11 +1,11 @@
 .login-form {
   width: 100%;
-  max-width: 380px;
+  max-width: 420px;
   margin: 200px auto;
   padding: 2rem;
   background: #ffffff;
   border-radius: 12px;
-  border: 1px solid gray;
+  border: 1px solid rgb(213, 213, 213);
   text-align: center;
 }
 
@@ -35,11 +35,10 @@
 }
 
 .login-div input {
-  width: 94%;
+  width: 100%;
   padding: 10px;
   margin-top: 6px;
   border: 1px solid #ccc;
-  font-family: "Comic Relief", sans-serif;
   border-radius: 8px;
   outline: none;
   transition: border-color 0.3s ease;
@@ -53,13 +52,11 @@
   background-color: #000000;
   color: white;
   padding: 10px;
-  font-family: "Comic Relief", sans-serif;
   border: none;
   border-radius: 8px;
   cursor: pointer;
   transition: all 0.3s ease;
 }
-
 
 .googlebtn {
   background-color: transparent;
@@ -68,7 +65,6 @@
   align-items: center;
   justify-content: center;
   gap: 8px;
-  font-family: "Comic Relief", sans-serif;
   padding: 8px 20px;
   border: 1px solid black;
   border-radius: 8px;

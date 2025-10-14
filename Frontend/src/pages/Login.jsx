@@ -5,6 +5,7 @@ import { FcGoogle } from 'react-icons/fc';
 
 export default function Login() {
     return (
+        <div className="main-container">
         <form className='login-form'>
             <h1>Welcome Back!!</h1>
             <div className='login-div'>
@@ -18,5 +19,6 @@ export default function Login() {
                 Don’t have an account? <Link to="/signup">Sign up</Link>
             </p>
         </form>
+        </div>
     )
 }
