@@ -1,7 +1,10 @@
 import React from 'react'
+import "../style/Layout.css";
 
 export default function Footer() {
   return (
-    <div>Footer</div>
+     <footer className='footer'>
+       <p>© {new Date().getFullYear()} MyApp. All rights reserved.</p>
+     </footer>
   )
 }
