@@ -89,5 +89,17 @@
 }
 
 .dividerr {
-  font-size: .85rem;
+  display: flex;
+  align-items: center;
+  font-size: 15px;
+  color: #9ca3af;
+}
+
+.dividerr::before,
+.dividerr::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background-color: #e5e7eb;
+  margin: 0 10px;
 }
