@@ -6,10 +6,9 @@
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
-  position: fixed;  
-  top: 0;
-  left: 0;
   z-index: 1000;
+  position: sticky;  
+  top: 0;            
 }
 
 .nav-logo {
@@ -30,7 +29,6 @@
   transition: color 0.3s ease;
 }
 
-
 @media (max-width: 600px) {
   .nav-links {
     gap: 1rem;
@@ -41,18 +39,13 @@
   }
 }
 
-
 .footer {
   width: 100%;
   text-align: center;
   padding: 1rem 0;
-  background-color: #000;
-  color: #fff;
-  font-family: "Comic Relief", sans-serif;
-  font-size: 0.9rem;
-  position: fixed;  
-  bottom: 0;
-  left: 0;
+  background-color: #000000;
+  color: #ffffff;
+  font-size: 1rem;
 }
 
 
