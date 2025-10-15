@@ -9,7 +9,9 @@ export default function Services() {
       navigate("/premium");
     }
   return (
-    <div className="pricing-section">
+    <section id="pricing-section">
+      <h1>Service's Section</h1>
+        <div className="cards-wrapper">
       <div className="pricing-cards">
         <div className="pricing-card free-card">
           <h3>Free Plan</h3>
@@ -37,6 +39,7 @@ export default function Services() {
           </button>
         </div>
       </div>
-    </div>
+      </div>
+    </section>
   )
 }

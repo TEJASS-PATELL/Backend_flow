@@ -30,7 +30,6 @@
 .home-buttons {
   display: flex;
   align-items: center;
-  margin-bottom: 120px;
   justify-content: center;
   gap: 1rem;
 }
