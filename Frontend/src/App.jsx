@@ -5,6 +5,8 @@ import Home from "./pages/Home";
 import Login from "./pages/Login";
 import SignUp from "./pages/SignUp";
 import ForgotPassword from "./components/ForgotPassword";
+import Profile from "./pages/Profile";
+import Premium from "./pages/AdvanceFeature";
 
 const App = () => {
   const router = createBrowserRouter([
@@ -17,6 +19,10 @@ const App = () => {
           path: "/",
           element: <Home/>
         },
+        {
+          path: "/premium",
+          element: <Premium/>
+        }
       ]
     },
 
@@ -31,7 +37,11 @@ const App = () => {
     {
       path: "forgot-password",
       element: <ForgotPassword />
-    }
+    },
+    {
+    path: "profile",
+    element: <Profile/>
+    },
   ])
   return(
     <RouterProvider router={router}></RouterProvider>
