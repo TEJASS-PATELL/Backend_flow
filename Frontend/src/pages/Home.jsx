@@ -4,6 +4,7 @@ import "../style/Home.css";
 import Features from "../components/Features";
 import FAQ from "../components/FAQ";
 import Services from "../components/Services";
+import Review from "../components/Review";
 
 export default function Home() {
   return (
@@ -28,6 +29,7 @@ export default function Home() {
     </div>
     <Services />
     <Features/>
+    <Review/>
     <FAQ/>
     </>
   );

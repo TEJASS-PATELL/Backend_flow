@@ -12,10 +12,6 @@
   margin-bottom: 1.5rem;
 }
 
-#pricing-section h1{
-    border-bottom: 2px solid black;
-}
-
 .cards-wrapper {
   flex: 1;                 
   display: flex;

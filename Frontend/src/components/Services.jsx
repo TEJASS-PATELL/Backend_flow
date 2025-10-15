@@ -11,7 +11,7 @@ export default function Services() {
   return (
     <section id="pricing-section">
       <h1>Service's Section</h1>
-        <div className="cards-wrapper">
+      <div className="cards-wrapper">
       <div className="pricing-cards">
         <div className="pricing-card free-card">
           <h3>Free Plan</h3>
