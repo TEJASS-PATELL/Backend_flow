@@ -21,7 +21,6 @@
   padding: 1.15rem 1rem;
   border-radius: 12px;
   width: 950px;
-  border: 1px solid rgb(212, 212, 212);
   text-align: center;
   transition: transform 0.3s ease;
 }

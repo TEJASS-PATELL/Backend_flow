@@ -78,6 +78,26 @@
   text-decoration: underline;
 }
 
+.checkbox-container {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem; 
+  color: #555;
+}
+
+.checkbox-container input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  accent-color: #007bff; 
+  cursor: pointer;
+}
+
+.checkbox-container a {
+  font-size: 0.85rem;
+  color: #0026ff;
+  cursor: pointer;
+}
+
 @media (max-width: 480px) {
   .sigup-form {
     padding: 1.5rem;

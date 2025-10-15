@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import "../style/FAQ.css"
 
+{/* Change questions and answer according to your application */}
 const faq = [
   {
     question: "What is this project about?",
