@@ -1,20 +1,16 @@
 import React from "react";
+import { FaRocket } from "react-icons/fa";
+import { LuRocket } from "react-icons/lu";
 import "../style/Premium.css";
 
 const Premium = () => {
   return (
     <div className="premium-container">
-      <h1>🎉 Welcome to Premium Access!</h1>
+      <h1><span className="icon-wrap"><LuRocket /></span> Welcome to Premium Access!</h1>
       <p>
         You’ve successfully unlocked all premium features.  
         Explore advanced tools and enjoy full access to MyApp.
       </p>
-
-      <ul>
-        <li>🚀 Access to Pro Dashboard</li>
-        <li>💡 Priority Support</li>
-        <li>📊 Advanced Analytics</li>
-      </ul>
 
       <button
         onClick={() => alert("This is a demo — premium features coming soon!")}

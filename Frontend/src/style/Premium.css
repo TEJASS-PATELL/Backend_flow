@@ -1,11 +1,16 @@
 .premium-container {
+  height: 100vh;
   text-align: center;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
   padding: 3rem 1rem;
 }
 
 .premium-container h1 {
   font-size: 2rem;
-  color: #ff9800;
+  color: #000000;
   margin-bottom: 1rem;
 }
 
@@ -16,21 +21,8 @@
   margin: 0 auto 1.5rem;
 }
 
-.premium-container ul {
-  list-style: none;
-  padding: 0;
-  margin: 1.5rem auto;
-  max-width: 300px;
-  text-align: left;
-}
-
-.premium-container li {
-  font-size: 1rem;
-  margin: 0.5rem 0;
-}
-
 .explore-btn {
-  background: #ff9800;
+  background: #000000;
   color: white;
   padding: 0.8rem 1.5rem;
   border: none;
@@ -40,6 +32,14 @@
   transition: 0.3s;
 }
 
-.explore-btn:hover {
-  background: #e68900;
+.icon-wrap {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #000000;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  font-size: 2rem;
 }
+

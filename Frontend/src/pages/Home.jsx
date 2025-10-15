@@ -1,12 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "../style/Home.css";
+import Features from "../components/Features";
+import FAQ from "../components/FAQ";
+import Services from "../components/Services";
 
 export default function Home() {
-  const handleBuy = () => {
-    console.log("hello")
-  }
   return (
+    <>
     <div className="home-container">
       <div className="home-content">
         <h1>
@@ -23,37 +24,11 @@ export default function Home() {
             Sign Up
           </Link>
         </div>
-
-        <div className="pricing-section">
-          <div className="pricing-cards">
-            <div className="pricing-card free-card">
-              <h3>Free Plan</h3>
-              <p>Get access to basic features and start exploring.</p>
-              <ul>
-                <li>✔ Basic Dashboard</li>
-                <li>✔ Email Login</li>
-                <li>❌ No Premium Features</li>
-              </ul>
-              <Link to="/signup" className="plan-btn">
-                Get Started
-              </Link>
-            </div>
-
-            <div className="pricing-card paid-card">
-              <h3>Pro Plan</h3>
-              <p>Unlock all premium tools and exclusive access.</p>
-              <ul>
-                <li>✔ All Free Features</li>
-                <li>✔ Priority Support</li>
-                <li>✔ Premium Dashboard</li>
-              </ul>
-              <button className="plan-btn paid" onClick={handleBuy}>
-                Buy Now
-              </button>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
+    <Services />
+    <Features/>
+    <FAQ/>
+    </>
   );
 }
