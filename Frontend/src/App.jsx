@@ -7,6 +7,8 @@ import SignUp from "./pages/SignUp";
 import ForgotPassword from "./components/ForgotPassword";
 import Profile from "./pages/Profile";
 import Premium from "./pages/AdvanceFeature";
+import Free from "./pages/FreeFeature";
+import TermsConditions from "./components/Term'sAndCondition";
 
 const App = () => {
   const router = createBrowserRouter([
@@ -20,8 +22,12 @@ const App = () => {
           element: <Home/>
         },
         {
-          path: "/premium",
+          path: "/premium-feature",
           element: <Premium/>
+        },
+        {
+          path: "/free-feature",
+          element: <Free/>
         }
       ]
     },
@@ -42,6 +48,10 @@ const App = () => {
     path: "profile",
     element: <Profile/>
     },
+    {
+      path: "terms-and-conditions",
+      element: <TermsConditions/>
+    }
   ])
   return(
     <RouterProvider router={router}></RouterProvider>

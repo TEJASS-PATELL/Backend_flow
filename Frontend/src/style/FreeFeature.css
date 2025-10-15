@@ -1,4 +1,4 @@
-.premium-container {
+.free-container {
   height: 100vh;
   text-align: center;
   display: flex;
@@ -8,23 +8,23 @@
   padding: 4rem 1rem;
 }
 
-.premium-container h1 {
+.free-container h1 {
   font-size: 2rem;
   color: #000000;
   margin-bottom: 1rem;
 }
 
-.premium-container p {
+.free-container p {
   font-size: 1rem;
   color: #555;
   max-width: 600px;
   margin: 0 auto 1.5rem;
 }
 
-.explore-btn {
+.demo-btn {
   background: #000000;
   color: white;
-  padding: 0.8rem 1.5rem;
+  padding: 0.6rem 1.25rem;
   border: none;
   border-radius: 10px;
   cursor: pointer;
@@ -42,4 +42,3 @@
   border-radius: 10px;
   font-size: 2rem;
 }
-

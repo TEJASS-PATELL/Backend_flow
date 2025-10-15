@@ -1,5 +1,3 @@
-import React from "react";
-import { FaRocket } from "react-icons/fa";
 import { LuRocket } from "react-icons/lu";
 import "../style/Premium.css";
 

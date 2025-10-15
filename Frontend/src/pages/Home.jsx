@@ -22,7 +22,7 @@ export default function Home() {
             Login
           </Link>
           <Link to="/signup" className="home-btn secondary-btn">
-            Sign Up
+            Sign-Up
           </Link>
         </div>
       </div>

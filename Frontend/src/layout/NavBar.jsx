@@ -8,7 +8,6 @@ export default function NavBar() {
       <div className="nav-logo">MyApp</div>
       <ul className="nav-links">
         <li><Link to="/">Home</Link></li>
-        <li><Link to="/login">Login</Link></li>
         <li><Link to="/signup">Sign Up</Link></li>
       </ul>
     </nav>

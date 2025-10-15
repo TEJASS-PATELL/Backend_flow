@@ -6,7 +6,7 @@ export default function Services() {
     const navigate = useNavigate();
     const handleBuy = () => {
       alert("Payment Successful! Redirecting to Premium Page...");
-      navigate("/premium");
+      navigate("/premium-feature");
     }
   return (
     <section id="pricing-section">
@@ -21,13 +21,13 @@ export default function Services() {
             <li>✔ Email Login</li>
             <li>❌ No Premium Features</li>
           </ul>
-          <Link to="/signup" className="plan-btn">
+          <Link to="/free-feature" className="plan-btn">
             Get Started
           </Link>
         </div>
 
         <div className="pricing-card paid-card">
-          <h3>Pro Plan</h3>
+          <h3>Pro Plan- $1</h3>
           <p>Unlock all premium tools and exclusive access.</p>
           <ul>
             <li>✔ All Free Features</li>
