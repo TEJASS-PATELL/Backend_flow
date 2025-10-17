@@ -10,7 +10,9 @@
 
 .profile-left {
   flex: 0 0 15%;
-  background-color: #000000;
+  border-right: 1px solid rgb(216, 216, 216);
+  border-top: 1px solid rgb(216, 216, 216);
+  border-bottom: 1px solid rgb(216, 216, 216);
   padding: 2rem;
   display: flex;
   flex-direction: column;
@@ -27,7 +29,7 @@
 
 .profile-container.dark .profile-left {
   background-color: #2b2b2b;
-  color: #f3f3f3;
+  color: #000000;
 }
 
 .profile-right {
@@ -36,7 +38,6 @@
   padding: 2rem;
 }
 
-/* ---------- Avatar ---------- */
 .profile-avatar img {
   width: 120px;
   height: 120px;
@@ -45,17 +46,16 @@
   margin-bottom: 1rem;
 }
 
-/* ---------- Name & Email ---------- */
 .profile-name {
   font-size: 1.8rem;
   margin-bottom: 0.3rem;
-  color: #ffffff;
+  color: #000000;
 }
 
 .profile-email {
   font-size: 0.95rem;
   margin-bottom: 1.5rem;
-  color: #dcdcdc;
+  color: #000000;
 }
 
 .profile-container.dark .profile-name,
@@ -81,13 +81,15 @@
 }
 
 .logout-btn {
-  background-color: #006aff;
-  color: #fff;
+  background-color: #000000;
+  border: 1px solid black;
+  color: #ffffff;
 }
 
 .delete-btn {
-  background-color: #ff0000;
-  color: #fff;
+  border: 1px solid black;
+  color: #000000;
+  background-color: rgb(228, 228, 228);
 }
 
 .toggle-container {
@@ -138,15 +140,6 @@
   border-radius: 50%;
 }
 
-input:checked + .slider {
-  background-color: #007bff;
-}
-
-input:checked + .slider:before {
-  transform: translateX(26px);
-}
-
-/* ---------- Responsive ---------- */
 @media (max-width: 768px) {
   .profile-container {
     flex-direction: column;
