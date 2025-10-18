@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "../style/Profile.css";
+import ImageUpload from "../components/ImageUpload";
 
 export default function Profile() {
 
@@ -13,7 +14,8 @@ export default function Profile() {
       <div className="profile-left">
         <div className="profile-info">
         <div className="profile-avatar">
-          <img src="./user.png" alt="User Avatar" />
+          <img src="./user.png" alt="User Avatar" className="avatar-img"/>
+          <ImageUpload/>
         </div>
         <h2 className="profile-name">John Doe</h2>
         <p className="profile-email">johndoe@example.com</p>
