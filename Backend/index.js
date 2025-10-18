@@ -1,22 +1,14 @@
 import express from "express";
+import { strictLimiter } from "./lib/rateLimiter";
 import dotenv from "dotenv";
-import helmetConfig from "./middlewares/helmet";
-import helmet from "helmet";
-import bodyParser from "body-parser";
 import authRoutes from "./routers/auth.route";
-import cors from "cors";
-import cookieParser from "cookie-parser";
+import middlewares from "./middlewares/middlewares";
 
 const app = express();
 dotenv.config();
-
-app.use(cors({
-  origin: [process.env.Frontend_URL],       //*  Add your frontend url here.
-  methods: ["GET", "POST", "PUT", "DELETE"],
-  credentials: true,
-})); 
-
-app.use("/api/auth", authRoutes);
+app.set("trust proxy", 1);
+middlewares(app);
+app.use("/api/auth", strictLimiter, authRoutes);
 
 const PORT = process.env.PORT || 6000;
 app.listen(PORT, () => {
