@@ -1,7 +1,9 @@
 import express from "express";
 import dotenv from "dotenv";
+import helmetConfig from "./middlewares/helmet";
 import helmet from "helmet";
 import bodyParser from "body-parser";
+import authRoutes from "./routers/auth.route";
 import cors from "cors";
 import cookieParser from "cookie-parser";
 
@@ -12,10 +14,9 @@ app.use(cors({
   origin: [process.env.Frontend_URL],       //*  Add your frontend url here.
   methods: ["GET", "POST", "PUT", "DELETE"],
   credentials: true,
-}));
-app.use(helmet());   //* used for incresing security by automatically setting HTTP headers.
-app.use(cookieParser());
+})); 
 
+app.use("/api/auth", authRoutes);
 
 const PORT = process.env.PORT || 6000;
 app.listen(PORT, () => {
