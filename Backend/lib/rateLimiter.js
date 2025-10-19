@@ -1,6 +1,6 @@
 import rateLimit from "express-rate-limit";
 
-const strictLimiter = rateLimit({
+export const strictLimiter = rateLimit({
   windowMs: 1 * 30 * 1000, 
   max: 5,
   message: {
@@ -10,7 +10,7 @@ const strictLimiter = rateLimit({
   keyGenerator: (req, res) => req.ip, 
 });
 
-const looseLimiter = rateLimit({
+export const looseLimiter = rateLimit({
   windowMs: 1 * 30 * 1000, 
   max: 50,
   message: {
@@ -20,4 +20,3 @@ const looseLimiter = rateLimit({
   keyGenerator: (req, res) => req.ip, 
 });
 
-module.exports = { strictLimiter, looseLimiter };

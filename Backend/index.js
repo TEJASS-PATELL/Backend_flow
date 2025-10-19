@@ -1,14 +1,13 @@
 import express from "express";
-import { strictLimiter } from "./lib/rateLimiter";
 import dotenv from "dotenv";
-import authRoutes from "./routers/auth.route";
-import middlewares from "./middlewares/middlewares";
+import authRoutes from "./routers/auth.route.js"
+import middlewares from "./middlewares/middlewares.js";
 
 const app = express();
 dotenv.config();
 app.set("trust proxy", 1);
 middlewares(app);
-app.use("/api/auth", strictLimiter, authRoutes);
+app.use("/api/auth", authRoutes);
 
 const PORT = process.env.PORT || 6000;
 app.listen(PORT, () => {

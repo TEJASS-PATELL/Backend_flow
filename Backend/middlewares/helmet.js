@@ -7,4 +7,4 @@ const helmetConfig = helmet({
   hsts: { maxAge: 31536000, includeSubDomains: true },
 });
 
-module.exports = helmetConfig;
+export default helmetConfig;

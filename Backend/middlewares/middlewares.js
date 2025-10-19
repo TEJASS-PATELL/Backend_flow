@@ -1,7 +1,7 @@
 import bodyParser from "body-parser";
 import compression from "compression";
 import express from "express";
-import helmetConfig from "./helmet";
+import helmetConfig from "./helmet.js";
 import cookieParser from "cookie-parser";
 import cors from "cors";
 
@@ -18,4 +18,4 @@ app.use(cors({
 })); 
 }
 
-module.exports = middlewares;
+export default middlewares;
