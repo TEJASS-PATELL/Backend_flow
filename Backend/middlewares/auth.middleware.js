@@ -1,9 +1,7 @@
 import jwt from "jsonwebtoken"
-import { PrismaClient } from "@prisma/client";
+import prisma from "../config/prisma.js";
 
-const prisma = new PrismaClient();
-
-const authentication = async (req, res, next) => {
+const authMiddleware = async (req, res, next) => {
     try{
     let token;
     if(
@@ -32,4 +30,4 @@ const authentication = async (req, res, next) => {
 }
 }
 
-export default authentication;
+export default authMiddleware;
