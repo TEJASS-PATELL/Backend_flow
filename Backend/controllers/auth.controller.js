@@ -280,3 +280,4 @@ export const deleteAccount = async (req, res) => {
         res.status(500).json({ success: false, message: "Something went wrong while deleting account" });
     }
 }
+
