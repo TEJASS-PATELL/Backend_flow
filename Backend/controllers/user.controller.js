@@ -3,7 +3,7 @@ import prisma from "../config/prisma.js";
 
 export const UserData = async (req, res) => {
     try {
-        const { userId } = req.body;
+        const { userId } = req.user;
 
         const user = await prisma.user.findUnique({ where: { id: userId } });
         if (!user) {
@@ -25,7 +25,8 @@ export const UserData = async (req, res) => {
 
 export const UserProfile = async (req, res) => {
     try {
-        const { userId, profilePic } = req.body;
+        const { profilePic } = req.body;
+        const { userId } = req.user;
 
         if (!userId) return res.status(401).json({ message: "User ID is missing" });
         if (!profilePic) return res.status(400).json({ message: "Profile picture is required" });

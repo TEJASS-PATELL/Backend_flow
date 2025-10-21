@@ -273,7 +273,7 @@ export const deleteAccount = async (req, res) => {
             sameSite: "Lax",
         });
 
-        return res.status(200).json({ message: "Account deleted successfully" });
+        return res.status(200).json({ success: true, message: "Account deleted successfully" });
     }
     catch (error) {
         console.log("deleteAccount error:", error);
