@@ -1,6 +1,6 @@
 import prisma from "../config/prisma.js";
 
-export const UserData = async   (req, res) => {
+export const UserData = async (req, res) => {
     try{
         const {userId} = req.body;
 
