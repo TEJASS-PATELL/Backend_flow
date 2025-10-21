@@ -219,24 +219,24 @@ export const sendPasswordResetOtp = async (req, res) => {
 }
 
 export const resetPassword = async (req, res) => {
-    const {email, newPassword, otp} = req.body;
+    const { email, newPassword, otp } = req.body;
 
-    if(!email || !newPassword || !otp){
-        return res.status(400).json({ success: false, message: "Email, Otp and NewPassword are required"});
+    if (!email || !newPassword || !otp) {
+        return res.status(400).json({ success: false, message: "Email, Otp and NewPassword are required" });
     }
 
-    try{
-        const user = await prisma.user.findUnique({where : {email: email}});
+    try {
+        const user = await prisma.user.findUnique({ where: { email: email } });
 
         if (!user) {
             return res.json({ success: false, message: "User not found" });
         }
 
-        if(!user.resetOtp || user.resetOtp !== otp){
+        if (!user.resetOtp || user.resetOtp !== otp) {
             return res.json({ success: false, message: 'Invalid Otp' });
         }
 
-         if (user.resetOtpExpireAt < Math.floor(Date.now() / 1000)) {
+        if (user.resetOtpExpireAt < Math.floor(Date.now() / 1000)) {
             return res.json({ success: false, message: "Otp expired" });
         }
 
@@ -251,11 +251,31 @@ export const resetPassword = async (req, res) => {
             }
         })
 
-        return res.status(200).json({message: "Password has been reset succesfully", success: true});
+        return res.status(200).json({ message: "Password has been reset succesfully", success: true });
     }
-    catch(err){
+    catch (err) {
         console.log(err)
-        return res.status(500).json({ success: false, message: err.message});
+        return res.status(500).json({ success: false, message: err.message });
     }
 }
 
+export const deleteAccount = async (req, res) => {
+    try {
+        const { userId } = req.body;
+        if (!userId) return res.status(401).json({ success: false, message: "UserId is missing" });
+
+        await prisma.user.delete({where: {id: userId}});
+
+        res.clearCookie("jwt", {
+            httpOnly: true,
+            secure: process.env.NODE_ENV === "production",
+            sameSite: "Lax",
+        });
+
+        return res.status(200).json({ message: "Account deleted successfully" });
+    }
+    catch (error) {
+        console.log("deleteAccount error:", error);
+        res.status(500).json({ success: false, message: "Something went wrong while deleting account" });
+    }
+}
