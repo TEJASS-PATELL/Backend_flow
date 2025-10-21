@@ -1,6 +1,6 @@
 import prisma from "../config/prisma.js";
 
-export const getUserData = async   (req, res) => {
+export const UserData = async   (req, res) => {
     try{
         const {userId} = req.body;
 
@@ -11,7 +11,8 @@ export const getUserData = async   (req, res) => {
 
         res.json({success: true, userData : {
             name: user.name,
-            isAcc
+            isAccountVerified: user.isAccountVerified,
+            email: user.email
         }})
 
     }catch(err){

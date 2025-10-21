@@ -1,6 +1,7 @@
 import express from "express";
 import dotenv from "dotenv";
 import authRoutes from "./routers/auth.route.js"
+import UserRoutes from "./routers/user.route.js"
 import middlewares from "./middlewares/middlewares.js";
 
 const app = express();
@@ -8,6 +9,7 @@ dotenv.config();
 app.set("trust proxy", 1);
 middlewares(app);
 app.use("/api/auth", authRoutes);
+app.use("/api/user", UserRoutes);
 
 const PORT = process.env.PORT || 6000;
 app.listen(PORT, () => {
