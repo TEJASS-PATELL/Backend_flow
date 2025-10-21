@@ -12,6 +12,6 @@ router.post("/verify-account", authMiddleware, verifyEmail);
 router.post("/is-auth", authMiddleware, isauth);
 router.post("/send-reset-otp", authMiddleware, sendPasswordResetOtp);
 router.post("/reset-password", authMiddleware, resetPassword);
-router.delete("/reset-password", authMiddleware, deleteAccount);
+router.delete("/delete-account", authMiddleware, deleteAccount);
 
 export default router;

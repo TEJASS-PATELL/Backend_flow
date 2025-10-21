@@ -17,12 +17,12 @@ const authMiddleware = async (req, res, next) => {
       return res.status(401).json({ message: "User not found" });
     }
 
-    req.body.userId = user.id;
+    req.user = { userId: user.id };  
+
     next();
 }catch(error){
     console.log(error);
     res.status(401).json({message: "Token invalid or expired"})
-}
-}
+}}
 
 export default authMiddleware;

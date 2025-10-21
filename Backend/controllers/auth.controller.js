@@ -97,7 +97,7 @@ export const logout = (req, res) => {
 
 export const sendVerifyOtp = async (req, res) => {
     try {
-        const { userId } = req.body;
+        const { userId } = req.user;
 
         const user = await prisma.user.findUnique({ where: { id: userId } });
 
@@ -132,7 +132,8 @@ export const sendVerifyOtp = async (req, res) => {
 }
 
 export const verifyEmail = async (req, res) => {
-    const { userId, otp } = req.body;
+    const { otp } = req.body;
+    const { userId } = req.user;
 
     if (!userId || !otp) {
         return res.json({ success: false, message: "Otp required" });
@@ -261,10 +262,10 @@ export const resetPassword = async (req, res) => {
 
 export const deleteAccount = async (req, res) => {
     try {
-        const { userId } = req.body;
+        const { userId } = req.user;
         if (!userId) return res.status(401).json({ success: false, message: "UserId is missing" });
 
-        await prisma.user.delete({where: {id: userId}});
+        await prisma.user.delete({ where: {id: userId}});
 
         res.clearCookie("jwt", {
             httpOnly: true,

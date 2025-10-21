@@ -24,7 +24,7 @@ model User {
   updatedAt         DateTime         @updatedAt
   payments          PaymentHistory[]
   profile           UserProfile?
-  profilePic         String
+  profilePic         String?
   verifyOtp         String           @default("")
   verifyOtpExpireAt Int              @default(0)
   isAccountVerified Boolean          @default(false)
