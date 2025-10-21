@@ -6,7 +6,7 @@ import cookieParser from "cookie-parser";
 import cors from "cors";
 
 const middlewares = (app) => {
-app.use(express.json({ limit: "10kb" })); //! convert frontend data so backend read that easily.
+app.use(express.json()); //! convert frontend data so backend read that easily.
 app.use(bodyParser.urlencoded({extended : true}));
 app.use(cookieParser());
 app.use(helmetConfig);    //* used for incresing security by automatically setting HTTP headers.

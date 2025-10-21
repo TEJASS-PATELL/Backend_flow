@@ -14,35 +14,41 @@ datasource db {
 }
 
 model User {
-  id           Int              @id @default(autoincrement())
-  name         String
-  email        String           @unique
-  password     String
-  phone        String?          @unique
-  role         String           @default("user")
-  createdAt    DateTime         @default(now())
-  updatedAt    DateTime         @updatedAt
-  payments     PaymentHistory[]  
-  profile      UserProfile?
+  id                Int              @id @default(autoincrement())
+  name              String
+  email             String           @unique
+  password          String
+  phone             String?          @unique
+  role              String           @default("user")
+  createdAt         DateTime         @default(now())
+  updatedAt         DateTime         @updatedAt
+  payments          PaymentHistory[]
+  profile           UserProfile?
+  verifyOtp         String           @default("")
+  verifyOtpExpireAt Int              @default(0)
+  isAccountVerified Boolean          @default(false)
+  resetOtp          String           @default("")
+  resetOtpExpireAt  Int              @default(0)
 }
+
 model UserProfile {
-  id        Int      @id @default(autoincrement())
-  address   String?
-  city      String?
-  country   String?
-  pincode   String?
-  userId    Int      @unique
-  user      User     @relation(fields: [userId], references: [id])
+  id      Int     @id @default(autoincrement())
+  address String?
+  city    String?
+  country String?
+  pincode String?
+  userId  Int     @unique
+  user    User    @relation(fields: [userId], references: [id])
 }
 
 model PaymentHistory {
-  id            Int       @id @default(autoincrement())
+  id            Int      @id @default(autoincrement())
   amount        Float
-  currency      String     @default("INR")
-  paymentStatus String     @default("PENDING")  
-  transactionId String?    @unique
-  method        String? 
-  createdAt     DateTime   @default(now())
+  currency      String   @default("INR")
+  paymentStatus String   @default("PENDING")
+  transactionId String?  @unique
+  method        String?
+  createdAt     DateTime @default(now())
   userId        Int
-  user          User       @relation(fields: [userId], references: [id])
+  user          User     @relation(fields: [userId], references: [id])
 }

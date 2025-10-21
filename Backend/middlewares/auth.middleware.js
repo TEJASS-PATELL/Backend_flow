@@ -3,15 +3,10 @@ import prisma from "../config/prisma.js";
 
 const authMiddleware = async (req, res, next) => {
     try{
-    let token;
-    if(
-        req.headers.authorization && req.headers.authorization.startsWith("Bearer")
-    ) {
-        token = req.headers.authorization.split(" ")[1];
-    }
+    const {token} = req.cookies;
 
     if(!token){
-        return res.status(401).json({message: "Not authorized"});
+        return res.status(401).json({message: "Not authorized. Login again"});
     }
 
     const decode = jwt.verify(token, process.env.JWT_SECRET);
@@ -22,7 +17,7 @@ const authMiddleware = async (req, res, next) => {
       return res.status(401).json({ message: "User not found" });
     }
 
-    req.user = user;
+    req.body.userId = user.id;
     next();
 }catch(error){
     console.log(error);
