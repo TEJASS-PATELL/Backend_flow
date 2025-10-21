@@ -19,3 +19,7 @@ export const UserData = async (req, res) => {
         res.status(500).json({success: false, message: "Error occur in get User data function"});
     }
 }
+
+export const UserProfile = async (req, res) => {
+    
+}
