@@ -4,4 +4,6 @@ import { payment } from "../controllers/payment.controller";
 
 const router = express.Router();
 
-router.post("/payment", authMiddleware, payment);
+router.post("/", authMiddleware, payment);
+
+export default module;
