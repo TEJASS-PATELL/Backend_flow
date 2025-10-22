@@ -95,6 +95,7 @@
 .checkbox-container a {
   font-size: 0.85rem;
   color: #0026ff;
+  margin-top: .4rem;
   cursor: pointer;
 }
 
