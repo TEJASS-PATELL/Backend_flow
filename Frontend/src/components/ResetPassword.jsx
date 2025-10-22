@@ -1,8 +1,10 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router";
 
 export default function ResetPassword() {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -15,11 +17,11 @@ export default function ResetPassword() {
       return;
     }
     alert("Password reset successful!");
+    navigate("/login");
   };
 
   return (
-    <div className="auth-container">
-      <form className="forgot-form" onSubmit={handleSubmit}>
+      <>
         <h1>Reset Password</h1>
         <p className="forgot-desc">Enter your new password below.</p>
 
@@ -40,11 +42,10 @@ export default function ResetPassword() {
             required
           />
 
-          <button type="submit" className="forgot-btn">
+          <button type="submit" className="forgot-btn" onClick={handleSubmit}>
             Reset Password
           </button>
         </div>
-      </form>
-    </div>
+      </>
   );
 }
