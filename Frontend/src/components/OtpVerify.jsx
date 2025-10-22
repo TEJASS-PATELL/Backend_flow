@@ -21,7 +21,7 @@ export default function OtpVerify() {
     <>
       <h1>Enter OTP</h1>
       <p className="forgot-desc">
-        We've sent a 6-digit code to your email.
+        We've sent a 6-digit code to your email Please enter the code below.
       </p>
       <div className="forgot-div">
         <input

@@ -14,7 +14,7 @@ export default function EnterEmail() {
     <>
       <h1>Forgot Password</h1>
       <p className="forgot-desc">
-        Enter your email below and we'll send you a link to reset your password.
+        Enter your email below and we'll send you a 6-digit code to reset your password.
       </p>
       <div className="forgot-div">
         <input
@@ -24,7 +24,7 @@ export default function EnterEmail() {
           required
         />
         <button onClick={handleSubmit} type="submit" className="forgot-btn">
-          Send Reset Link
+          Send Reset Code
         </button>
       </div>
       </>
