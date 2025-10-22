@@ -9,6 +9,7 @@ import Profile from "./pages/Profile";
 import Premium from "./pages/AdvanceFeature";
 import Free from "./pages/FreeFeature";
 import TermsConditions from "./components/Term'sAndCondition";
+import OtpVerify from "./components/OtpVerify";
 
 const App = () => {
   const router = createBrowserRouter([
@@ -31,7 +32,6 @@ const App = () => {
         }
       ]
     },
-
      {
       path: "/login",
       element: <Login />,
@@ -41,8 +41,14 @@ const App = () => {
       element: <SignUp />,
     },
     {
-      path: "forgot-password",
-      element: <ForgotPassword />
+      path: "/forgot-password/",
+      element: <ForgotPassword />,
+      children: [
+        {
+          path: "verify-otp",
+          element: <OtpVerify/>
+        }
+      ]
     },
     {
     path: "profile",
