@@ -1,12 +1,16 @@
-import React from "react";
+import React, { use, useState } from "react";
 import "../style/ForgotPassword.css";
+import { useNavigate } from "react-router-dom"; 
 
 export default function OtpVerify() {
     const [otp, setOtp] = useState("");
+    const navigate = useNavigate();
+
     const handleOtpSubmit = (e) => {
         e.preventDefault();
         if (otp.length === 6) {
             alert("OTP Verified! You can reset your password now.");
+            navigate("/forgot-password/reset");
         }
         else {
             alert("Enter a valid 6-digit OTP");

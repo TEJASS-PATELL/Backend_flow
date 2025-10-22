@@ -10,6 +10,8 @@ import Premium from "./pages/AdvanceFeature";
 import Free from "./pages/FreeFeature";
 import TermsConditions from "./components/Term'sAndCondition";
 import OtpVerify from "./components/OtpVerify";
+import EnterEmail from "./components/EnterEmail";
+import ResetPassword from "./components/ResetPassword";
 
 const App = () => {
   const router = createBrowserRouter([
@@ -44,10 +46,9 @@ const App = () => {
       path: "/forgot-password/",
       element: <ForgotPassword />,
       children: [
-        {
-          path: "verify-otp",
-          element: <OtpVerify/>
-        }
+        { path: "", element: <EnterEmail/> },
+        { path: "verify-otp", element: <OtpVerify /> },
+        { path: "reset", element: <ResetPassword /> }
       ]
     },
     {

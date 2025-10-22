@@ -7,7 +7,7 @@ export default function EnterEmail() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    navigate("/forgot-password/verify-otp"); 
+    navigate("/forgot-password/verify-otp");
   };
 
   return (

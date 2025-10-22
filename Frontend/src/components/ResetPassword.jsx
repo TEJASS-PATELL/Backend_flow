@@ -15,7 +15,6 @@ export default function ResetPassword() {
       return;
     }
     alert("Password reset successful!");
-    // 👇 yahan backend call kar sakte ho (API request)
   };
 
   return (
