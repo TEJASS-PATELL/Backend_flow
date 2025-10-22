@@ -38,7 +38,7 @@ export default function OtpVerify() {
           className="forgot-btn"
           onClick={handleOtpSubmit}
         >
-          Verify OTP
+          Verify Email
         </button>
       </div>
     </>
